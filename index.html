@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>fcTen 10secMath</title>
+   
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/v4-shims.css"> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    10 sec Math
+    <div class="container">
+        <div id="title container-fluid">
+            <h1>10SecMath</h1>
+        </div>
+        <div class="container game-wrapper">
+            <i>game-wrapper division</i>
+            
+            <div id="mathOpDisplay">
+                <i>mathOpDisplay division</i>
+                <p id="mathOpValue">
+                    10 + 8
+                </p>
+            </div>
+            
+            <div id="timerDisplay" class="mt-4">
+                <i>timer display division</i>
+                <p id="timer-value">
+                    
+                </p>
+            </div>
+
+            <div id="playerInputDisplay">
+                <i>playerInputDisplay division</i>
+                <label for="result">Result:</label>
+                <input type="text" id="playerInputValue" name="result" placeholder="Type your mental math here. Be fast!"> 
+                <input type="button" id="startButton" value="Start">
+                <input type="button" id="secButton" value="Sec" class="mt-4">
+            </div>
+        </div>
+        <form id="radioDiv">
+            <div class="radio">
+                <input type="radio" id="sum" class="filter" name="filter" value="sum" checked>
+                <label for="sum"> + </label>
+            </div>
+        
+            <div class="radio">
+                <input type="radio" id="minus"  class="filter" name="filter" value="minus">
+                <label for="minus"> - </label>
+            </div>
+        
+            <div class="radio">
+                <input type="radio" id="multiply" class="filter" name="filter" value="multiply">
+                <label for="multiply"> * </label>
+            </div>
+
+            <div class="radio">
+                <input type="radio" id="divide" class="filter" name="filter" value="divide">
+                <label for="divide"> / </label>
+            </div>
+        </form>
+        <div id="numberLimitPanel">
+            <label for="vol" id="numLimitLabel">Number Limit: </label>
+            <input type="range" id="numLimit" name="vol" min="10" max="100" value="10">
+        </div>
+    </div>
+  </body>
+</html>
