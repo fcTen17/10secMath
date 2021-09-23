@@ -30,7 +30,7 @@
             <div id="mathOpDisplay">
                 <i>mathOpDisplay division</i>
                 <p id="mathOpValue">
-                    10 + 8
+                    PRESS ENTER TO START
                 </p>
             </div>
             
@@ -47,6 +47,7 @@
                 <input type="text" id="playerInputValue" name="result" placeholder="Type your mental math here. Be fast!"> 
                 <input type="button" id="startButton" value="Start">
                 <input type="button" id="secButton" value="Sec" class="mt-4">
+                <input type="button" id="reset" value="Reset" class="mt-4">
             </div>
         </div>
         <form id="radioDiv">
@@ -62,7 +63,7 @@
         
             <div class="radio">
                 <input type="radio" id="multiply" class="filter" name="filter" value="multiply">
-                <label for="multiply"> * </label>
+                <label for="multiply"> x </label>
             </div>
 
             <div class="radio">
@@ -72,7 +73,12 @@
         </form>
         <div id="numberLimitPanel">
             <label for="vol" id="numLimitLabel">Number Limit: </label>
-            <input type="range" id="numLimit" name="vol" min="10" max="100" value="10">
+            <input type="range" id="numLimit" name="vol" min="10" max="100" step="10" value="10" oninput="numLimDisplay(this.value)">
+        <script>
+            const numLimDisplay = (value) => {
+                $('#numLimitLabel').text(`Number Limit: ${value}`)
+            }
+        </script>
         </div>
     </div>
   </body>
