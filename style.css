@@ -19,7 +19,11 @@
   /*               End of Setup             */
 
   body {
-    background-color: steelblue;
+    background-image: url('./image/paul-volkmer-qVotvbsuM_c-unsplash.jpg');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
   }
 
   .container {
@@ -27,21 +31,29 @@
     max-width: 600px;
   }
 
+  h1 {
+      color: turquoise;
+  }
+
   .game-wrapper {
       max-width: 600px;
-      min-height: 500px;
-      background-color:silver;
+      min-height: 400px;
+      background-color: transparent;
+      border: 4px solid turquoise;
+      border-radius: 10px;
       margin:auto:
   }
 
   #timerDisplay {
       margin: auto;
-      background-color: black;
-      color: yellow;
+      background-color: transparent;
+      color:turquoise;
       min-width: 100px;
       min-heigth: 60px;
       max-width: 200px;
       text-align: center;
+      border-radius: 10px;
+      border: 4px solid teal;
   }
 
   #timer-value {
@@ -50,36 +62,102 @@
 
   #mathOpDisplay {
     margin: auto;
-    background-color: black;
-    color: yellow;
+    background-color: transparent;
+    color:turquoise;
     min-width: 100px;
-    min-heigth: 60px;
+    min-height: 100px;
     max-width: 200px;
     text-align: center;
+    font-size: 50px;
+    border-radius: 10px;
+    border: 4px solid teal;
+  }
+
+  #operationTitle {
+      font-size: 20px;
   }
 
   #mathOpvalue {
-    font-size: 60px;
+    font-size: 100px;
   }
 
   #playerInputDisplay {
     display: flex;
     flex-direction: column;
-    background-color:purple;
+    background-color: transparent;
+  }
+
+  #playerInputValue {
+      max-width: 140px;
+      margin: auto;
+      border-radius: 8px;
+      background-color:turquoise;
+      color: teal;
+      text-align: center;
+  }
+ 
+  #resetDiv{
+      text-align: center;
+  }
+
+  #scoreDiv {
+      display: flex;
+      justify-content: space-between;
+      background-color: transparent;
+      color:turquoise
+  }
+
+  #reset {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  #reset:hover {
+      color:turquoise;
   }
 
   #radioDiv {
       display: flex;
       justify-content: space-evenly;
       flex-direction: row;
-      border: 4px solid black;
-      background-color: tan;
+      color:turquoise;
+      background-color: transparent;
+  }
+
+  .filter {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid teal;
+    transition: 0.2s all linear;
+    margin-right: 5px;
+  
+    position: relative;
+    top: 4px;
+  }
+  
+  .filter:checked {
+    border: 6px solid darkcyan;
   }
 
   #numberLimitPanel {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 4px solid black;
-    background-color: tan;
+    
+    color:turquoise;
+    background-color: transparent;
   }
+
+  

@@ -7,7 +7,6 @@ $(document).ready(function(){
     let topScore = 0;
     let correctResult;
     let userAnswer;
-    let count = 0;
     let timeLeft = 10;
 
     const randomNum = (numberLimit) => {
@@ -48,12 +47,11 @@ $(document).ready(function(){
     }
 
     const checkAnswer = (userAnswer, correctResult) => {
-        if (Number(userAnswer) === correctResult) {
-            console.log('voilá.');
-            
-                newQuestion();
-                updateTimeLeft(+1);
-            
+        if (Number(userAnswer) === correctResult) {    
+            score += 1;
+            $('#gameScore').text(`Score: ${score}`);
+            newQuestion();
+            updateTimeLeft(+1);
         }
     };
 
@@ -98,19 +96,16 @@ $(document).ready(function(){
                 $('#timer-value').text(timeLeft)
                
                 if (timeLeft === 0) {
-                    $('#timer-value').text('Game Over!');
-                    $('#playerInputValue').css('display', 'none');
+                    $('#timer-value').text('XX');
+                    $('#playerInputValue').css('opacity', '0%');
+                    $('#playerInputValue').css('disabled', 'true');
                     $('#reset').prop('disabled', false);
                     stopTimer();
-                } else if (timeLeft < 5) {
-                    $('#timer-value').css('color', 'red');
-                } else if (timeLeft < 11) {
-                    $('#timer-value').css('color', 'yellow');
-                } else if(timeLeft < 30) {
-                    $('#timer-value').css('color', 'lime');
-                } else {
-                    $('#timer-value').css('color', 'skyblue');
-                }
+                    if (score > topScore) {
+                        topScore = score;
+                        $('#topScore').text(`Top score: ${topScore}`);
+                    }
+                } 
                 console.log(timeLeft);
             }, 1000);
         }
@@ -141,9 +136,11 @@ $(document).ready(function(){
 
 
     $('#reset').on('click', function () {
-        $('#timer-value').css('color', 'yellow');
-        $('#playerInputValue').css('display', 'block');
+        $('#playerInputValue').css('disabled', 'false');
+        $('#playerInputValue').css('opacity', '100%');
         $('#timer-value').text('10')
+        score = 0;
+        $('#gameScore').text(`Score: ${score}`);
         newQuestion();
     })
     
