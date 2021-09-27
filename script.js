@@ -8,20 +8,60 @@ $(document).ready(function(){
     let correctResult;
     let userAnswer;
     let timeLeft = 10;
+    
+    let numPair = [];
+    
 
-    const randomNum = (numberLimit) => {
-        let num = Math.floor((Math.random() * numberLimit) + 1);
-        return num;
+    const randomNumPair = (numberLimit) => {
+        let randomArr = [];
+        for ( i = 0; i < 2; i++) {
+            let num = Math.floor((Math.random() * numberLimit) + 1);
+            randomArr.push(num);
+        }
+        console.log('randomArr: ' + randomArr);
+        return randomArr;            
     };
 
-    const randomEquation = () => {
+    const getGameNumPair = (operator) => {
         let rangeValue = numberLimit();
+        
+        numPair = randomNumPair(rangeValue);
+        if (operator === '+' || operator === 'x') {
+            console.log('+ or x numPair: ' + numPair);
+            //return numPair;
+        } else if (operator === '-' || operator === '/') {
+            numPair.sort(function(a , b) {
+                return b - a;
+            });
+            console.log('- or / sorted numPair: ' + numPair);
+            if (operator === '-') {
+                console.log('- numPair: ' + numPair);
+                //return numPair;
+            } else {
+                if (numPair[0] % numPair[1] === 0) {
+                    console.log('/ numPair: ' + numPair);
+                    console.log(typeof numPair);
+                    console.log(numPair);
+                    //return numPair;
+                } else { 
+                    console.log('Recursion: ' + numPair); 
+                    getGameNumPair('/');
+                }
+            }
+        }     
+    }
+
+    const randomEquation = () => {
+        
         let result;
         let operator = operatorSelection();
         console.log('operator: ' + operator);
-        let a = randomNum(rangeValue);
+        getGameNumPair(operator);
+        let gamePair = numPair;
+        console.log(gamePair); 
+        let a = gamePair[0];
         console.log('a: ' + a);
-        let b = randomNum(rangeValue);
+        let b = gamePair[1];
         console.log('b: ' + b);
         $('#mathOpValue').text(`${a} ${operator} ${b}`)
         switch (operator) {

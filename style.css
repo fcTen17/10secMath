@@ -19,9 +19,8 @@
   /*               End of Setup             */
 
   body {
-    background-image: url('./image/paul-volkmer-qVotvbsuM_c-unsplash.jpg');
-    background-size: cover;
-    height: 100vh;
+    background: rgb(53,42,233);
+    background: radial-gradient(circle, rgba(53,42,233,1) 26%, rgba(2,0,36,1) 100%, rgba(70,105,173,1) 100%);
     padding:0;
     margin:0;
   }
