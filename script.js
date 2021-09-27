@@ -24,32 +24,17 @@ $(document).ready(function(){
 
     const getGameNumPair = (operator) => {
         let rangeValue = numberLimit();
-        
         numPair = randomNumPair(rangeValue);
-        if (operator === '+' || operator === 'x') {
-            console.log('+ or x numPair: ' + numPair);
-            //return numPair;
-        } else if (operator === '-' || operator === '/') {
+        if (operator === '-' || operator === '/') {
             numPair.sort(function(a , b) {
                 return b - a;
             });
-            console.log('- or / sorted numPair: ' + numPair);
-            if (operator === '-') {
-                console.log('- numPair: ' + numPair);
-                //return numPair;
-            } else {
-                if (numPair[0] % numPair[1] === 0) {
-                    console.log('/ numPair: ' + numPair);
-                    console.log(typeof numPair);
-                    console.log(numPair);
-                    //return numPair;
-                } else { 
-                    console.log('Recursion: ' + numPair); 
-                    getGameNumPair('/');
-                }
+            if (operator === '/' && numPair[0] % numPair[1] !== 0) {
+                getGameNumPair('/');
             }
-        }     
-    }
+        }
+    }     
+    
 
     const randomEquation = () => {
         
