@@ -124,7 +124,7 @@ $(document).ready(function(){
                 if (timeLeft === 0) {
                     $('#timer-value').text('XX');
                     $('#playerInputValue').css('opacity', '0%');
-                    $('#playerInputValue').css('disabled', 'true');
+                    $('#playerInputValue').prop('disabled', true);
                     $('#reset').prop('disabled', false);
                     
                     stopTimer();
@@ -163,7 +163,7 @@ $(document).ready(function(){
 
 
     $('#reset').on('click', function () {
-        $('#playerInputValue').css('disabled', 'false');
+        $('#playerInputValue').prop('disabled', false);
         $('#playerInputValue').css('opacity', '100%');
         $('#timer-value').text('10')
         score = 0;
